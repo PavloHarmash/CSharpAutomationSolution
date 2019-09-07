@@ -59,6 +59,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\Environment\EnvironmentConfigs.cs" />
+    <Compile Include="Configurations\Users\UsersConfigs.cs" />
+    <Compile Include="Configurations\WebBrowsers\ChromeBrowserConfigs.cs" />
     <Compile Include="PageObjects\BasePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCases\APITests\APIBaseTest.cs" />
@@ -70,7 +73,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Configuration\README.txt" />
+    <Content Include="Configurations\README.txt" />
     <Content Include="Enums\README.txt" />
     <Content Include="Extentions\README.txt" />
     <Content Include="Interfaces\README.txt" />
