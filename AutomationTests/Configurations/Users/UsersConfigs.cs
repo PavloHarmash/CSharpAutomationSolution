@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyExalinkVD.Configurations.Users
+namespace AutomationTests.Configurations.Users
 {
     class UsersConfigs
     {

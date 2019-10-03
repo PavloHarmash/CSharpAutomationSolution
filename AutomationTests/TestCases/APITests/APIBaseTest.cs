@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyExalinkVD.Configurations.Environment
+namespace AutomationTests.TestCases.APITests
 {
-    class EnvironmentConfigs
+    class APIBaseTest
     {
     }
 }

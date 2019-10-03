@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyExalinkVD.TestCases.Performance
+namespace AutomationTests.Configurations.WebBrowsers
 {
-    class PerformanceBaseTest
+    class ChromeBrowserConfigs
     {
     }
 }

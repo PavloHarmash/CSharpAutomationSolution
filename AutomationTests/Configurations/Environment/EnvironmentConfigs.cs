@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyExalinkVD.PageObjects
+namespace AutomationTests.Configurations.Environment
 {
-    class BasePage
+    class EnvironmentConfigs
     {
     }
 }
