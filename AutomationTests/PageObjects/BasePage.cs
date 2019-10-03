@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyExalinkVD.Configurations.WebBrowsers
+namespace AutomationTests.PageObjects
 {
-    class ChromeBrowserConfigs
+    class BasePage
     {
     }
 }

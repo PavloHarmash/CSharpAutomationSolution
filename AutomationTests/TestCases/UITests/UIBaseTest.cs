@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyExalinkVD.TestCases.APITests
+namespace AutomationTests.TestCases.UITests
 {
-    class APIBaseTest
+    class UIBaseTest
     {
     }
 }
