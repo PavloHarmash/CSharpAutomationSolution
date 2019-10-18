@@ -1,12 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutomationTests.Enums;
+using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 namespace AutomationTests.TestCases.UITests
 {
     class UIBaseTest
     {
+        public IWebDriver WebDriver { get; set; }
+
+        public UIBaseTest(BrowserTypes type = BrowserTypes.Chrome)
+        {            
+        }
+
+        [OneTimeSetUp]
+        public void LogIn()
+        {
+            WebDriver = new ChromeDriver();
+        }
+
+        [OneTimeTearDown]
+        public void LogOut()
+        {
+
+        }
+
+        private bool LoadBrowser()
+        {
+            switch (BrowserTypes.Chrome)
+            {
+                default:
+            }
+        }
     }
 }
