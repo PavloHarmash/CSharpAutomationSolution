@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutomationTests.TestCases.Performance
+namespace Yukon.TestCases.Performance
 {
     class PerformanceBaseTest
     {

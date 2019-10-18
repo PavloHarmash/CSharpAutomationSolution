@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutomationTests.PageObjects
+namespace Yukon.PageObjects
 {
     class BasePage
     {

@@ -1,4 +1,4 @@
-﻿namespace AutomationTests.Enums
+﻿namespace Yukon.Enums
 {
     public enum BrowserTypes
     {
