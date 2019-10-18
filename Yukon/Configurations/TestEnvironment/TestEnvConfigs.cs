@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CSharpAutomationSolution.Models.Configs;
+using Yukon.Utility.Helpers;
 
 namespace Yukon.Configurations.TestEnvironment
 {
-    class TestEnvConfigs
+    public class TestEnvConfigs
     {
+        private static readonly TestEnvConfigModel Configs
+            = JsonHelper.DeserializeJson<TestEnvConfigModel>(@"Configurations\TestEnvironment\TestEnvConfig.json");
+
+        public static string URL { get; } = Configs.URL;
+        public static string ApiPort { get; } = Configs.ApiPort;
     }
 }

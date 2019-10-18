@@ -1,0 +1,10 @@
+{
+  "Customer": {
+    "UserName": "customer",
+    "Password": "Dummy#123"
+  },
+  "Implementer": {
+    "UserName": "implementer",
+    "Password": "Dummy#123"
+  }
+}
