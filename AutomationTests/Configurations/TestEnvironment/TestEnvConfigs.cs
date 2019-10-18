@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutomationTests.Configurations.Environment
+namespace AutomationTests.Configurations.TestEnvironment
 {
-    class EnvironmentConfigs
+    class TestEnvConfigs
     {
     }
 }
