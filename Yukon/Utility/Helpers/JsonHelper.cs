@@ -69,12 +69,12 @@ namespace AutomationTests.Utility.Helpers
             }
             catch (JsonSerializationException)
             {
-                LogUtil.WriteDebug($"{json} cannot be deserialized with {nameof(T)}");
+                //LogUtil.WriteDebug($"{json} cannot be deserialized with {nameof(T)}");
                 return false;
             }
             catch (Exception ex)
             {
-                LogUtil.WriteDebug($"{json} cannot be deserialized with {nameof(T)}, because of exception => {ex.Message}");
+                //LogUtil.WriteDebug($"{json} cannot be deserialized with {nameof(T)}, because of exception => {ex.Message}");
                 return false;
             }
         }

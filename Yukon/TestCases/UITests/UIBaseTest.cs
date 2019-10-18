@@ -25,10 +25,12 @@ namespace AutomationTests.TestCases.UITests
 
         }
 
-        private bool LoadBrowser()
+        private void LoadBrowser()
         {
             switch (BrowserTypes.Chrome)
             {
+                case BrowserTypes.Chrome:
+                    break;
                 default:
             }
         }
