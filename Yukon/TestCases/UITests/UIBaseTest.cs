@@ -1,9 +1,9 @@
-﻿using AutomationTests.Enums;
+﻿using Yukon.Enums;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace AutomationTests.TestCases.UITests
+namespace Yukon.TestCases.UITests
 {
     class UIBaseTest
     {

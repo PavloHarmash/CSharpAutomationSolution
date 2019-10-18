@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutomationTests.Utility.Helpers
+namespace Yukon.Utility.Helpers
 {
     class JsonHelper
     {

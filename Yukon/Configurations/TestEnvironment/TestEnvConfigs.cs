@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutomationTests.Configurations.TestEnvironment
+namespace Yukon.Configurations.TestEnvironment
 {
     class TestEnvConfigs
     {
