@@ -1,8 +1,6 @@
-﻿using CSharpAutomationSolution.Driver;
-
-namespace Yukon.PageObjects
+﻿namespace Yukon.PageObjects
 {
-    class BasePage : WebDriver
+    public class BasePage
     {
     }
 }

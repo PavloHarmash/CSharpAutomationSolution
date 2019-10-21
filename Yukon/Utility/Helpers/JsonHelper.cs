@@ -1,11 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Yukon.Utility.Helpers
 {
@@ -42,7 +37,15 @@ namespace Yukon.Utility.Helpers
 
             if (File.Exists(pathToJson))
             {
-                jsonContent = File.ReadAllText(pathToJson);
+                try
+                {
+                    jsonContent = File.ReadAllText(pathToJson);
+                }
+                catch (IOException)
+                {
+                    throw;
+                }
+
                 return JsonConvert.DeserializeObject<T>(jsonContent);
             }
 

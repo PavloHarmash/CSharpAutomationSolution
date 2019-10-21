@@ -1,52 +1,38 @@
-﻿using CSharpAutomationSolution.Driver;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+﻿using NUnit.Framework;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
 using Yukon.Configurations.TestEnvironment;
-using Yukon.Configurations.WebBrowsers;
+using Yukon.Driver;
 using Yukon.Enums;
+using Yukon.PageObjects;
 
 namespace Yukon.TestCases.UITests
 {
-    public class UIBaseTest : WebDriver
+    public class UIBaseTest : WebDriverConfigs
     {
-        private BrowserTypes browserType;
-        private string userName;
-        private string password;
-        private bool downloadFiles;
-        private string downloadPath;
+        protected string Login { get; set; }
+        protected string Password { get; set; }
 
         public UIBaseTest() : this(BrowserTypes.Chrome,
                                    null,
                                    null,
                                    false)
         {
-            this.downloadPath = null;
         }
 
         public UIBaseTest([Optional]BrowserTypes browserType,
-                          [Optional]string userName,
+                          [Optional]string login,
                           [Optional]string password,
-                          [Optional]bool downloadFiles)
+                          [Optional]bool downloadFiles) : base(browserType, downloadFiles)
         {
-            this.browserType = browserType;
-            this.userName = userName;
-            this.password = password;
-            this.downloadFiles = downloadFiles;
-
-            if (this.downloadFiles)
-            {
-                this.downloadPath = CreateDownloadFilesDirectory(
-                     Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"DownloadedFiles"));
-            }
+            this.Login = login;
+            this.Password = password;
         }
 
         [OneTimeSetUp]
-        public virtual void LounchBrowser()
+        public void LounchBrowser()
         {
             LoadBrowser();
         }
@@ -56,45 +42,24 @@ namespace Yukon.TestCases.UITests
         {
         }
 
+        private void LoadBrowser()
+        {
+            base.WebDriver.Manage().Window.Maximize();
+            base.WebDriver.Navigate().GoToUrl(TestEnvConfigs.URL);
+            new WebDriverWait(base.WebDriver, TimeSpan.FromSeconds(10));
+        }
+
+        protected T GetPage<T>(string driver) where T : BasePage => (T)Activator.CreateInstance(typeof(T), driver);
+
         [OneTimeTearDown]
         public void CloseAllActivities()
         {
-            base.webDriver.Quit();
+            base.WebDriver.Quit();
 
-            if (this.downloadFiles)
+            if (Directory.Exists(base.downloadPath))
             {
-                if (Directory.Exists(downloadPath))
-                    Directory.Delete(downloadPath, true);
+                Directory.Delete(base.downloadPath, true);
             }
-        }
-
-        private string CreateDownloadFilesDirectory(string pathToDownloadedFilesDirectory)
-        {
-            if (Directory.Exists(pathToDownloadedFilesDirectory))
-            {
-                Directory.Delete(pathToDownloadedFilesDirectory, true);
-            }
-
-            Directory.CreateDirectory(pathToDownloadedFilesDirectory);
-
-            return Directory.Exists(pathToDownloadedFilesDirectory) ? pathToDownloadedFilesDirectory : string.Empty;
-        }
-
-        private void LoadBrowser()
-        {
-            switch (browserType)
-            {
-                case BrowserTypes.Chrome:
-                    base.webDriver = new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory,
-                                                      ChromeBrowserConfigs.GetChromeOptions(downloadPath));
-                    break;
-                default:
-                    break;
-            }
-
-            base.webDriver.Manage().Window.Maximize();
-            base.webDriver.Navigate().GoToUrl(TestEnvConfigs.URL);
-            new WebDriverWait(base.webDriver, TimeSpan.FromSeconds(10));
         }
     }
 }

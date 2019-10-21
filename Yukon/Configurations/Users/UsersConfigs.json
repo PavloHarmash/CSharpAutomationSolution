@@ -1,10 +1,10 @@
 {
   "Customer": {
-    "UserName": "customer",
+    "Login": "11172",
     "Password": "Dummy#123"
   },
-  "Implementer": {
-    "UserName": "implementer",
+  "Supplier": {
+    "Login": "-----",
     "Password": "Dummy#123"
   }
 }
