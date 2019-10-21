@@ -1,4 +1,4 @@
-﻿using CSharpAutomationSolution.Models.Configs;
+﻿using Yukon.Models.Configs;
 using Yukon.Utility.Helpers;
 
 namespace Yukon.Configurations.TestEnvironment

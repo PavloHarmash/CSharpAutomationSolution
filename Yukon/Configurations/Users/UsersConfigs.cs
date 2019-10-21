@@ -1,4 +1,4 @@
-﻿using CSharpAutomationSolution.Models.Configs;
+﻿using Yukon.Models.Configs;
 using Yukon.Utility.Helpers;
 
 namespace Yukon.Configurations.Users
@@ -9,6 +9,6 @@ namespace Yukon.Configurations.Users
             = JsonHelper.DeserializeJson<UsersConfigsModel>(@"Configurations\Users\UsersConfigs.json");
 
         public static Customer Customer { get; } = Configs.Customer;
-        public static Implementer Implementer { get; } = Configs.Implementer;
+        public static Supplier Implementer { get; } = Configs.Supplier;
     }
 }

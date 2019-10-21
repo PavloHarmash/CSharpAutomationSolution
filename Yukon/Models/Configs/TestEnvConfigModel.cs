@@ -1,4 +1,4 @@
-﻿namespace CSharpAutomationSolution.Models.Configs
+﻿namespace Yukon.Models.Configs
 {
     public class TestEnvConfigModel
     {

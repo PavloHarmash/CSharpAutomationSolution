@@ -1,13 +1,12 @@
 ﻿using NUnit.Framework;
 using Yukon.Configurations.TestEnvironment;
 using Yukon.Configurations.Users;
-using Yukon.TestCases.UITests;
 
-namespace CSharpAutomationSolution.TestCases.UITests.Smoke
+namespace Yukon.TestCases.UITests.Smoke
 {
     public class Register : UIBaseTest
     {
-        public Register() : base(downloadFiles: true)
+        public Register() : base(login: UsersConfigs.Customer.Login, password: UsersConfigs.Customer.Password, downloadFiles: true)
         {
         }
 
@@ -19,6 +18,7 @@ namespace CSharpAutomationSolution.TestCases.UITests.Smoke
             var apiPort = TestEnvConfigs.ApiPort;
             var customer = UsersConfigs.Customer;
             var implementer = UsersConfigs.Implementer;
+            
         }
     }
 }
