@@ -1,8 +1,6 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
 using Yukon.Configurations.DriversConfigs;
@@ -16,10 +14,10 @@ namespace Yukon.TestCases.UITests
     public class UIBaseTest
     {
         private WebDrivers Driver { get; set; }
-        private BrowserTypes browserType;
+        private readonly BrowserTypes browserType;
         protected string Login { get; set; }
         protected string Password { get; set; }
-        private bool downloadFiles;
+        private readonly bool downloadFiles;
         private string downloadPath = null;
 
         public UIBaseTest() : this(BrowserTypes.Chrome,
@@ -79,7 +77,7 @@ namespace Yukon.TestCases.UITests
             => Activator.CreateInstance(typeof(T), this.Driver.WebBrowser) as T;
 
         [OneTimeTearDown]
-        public void CloseAllActivities()
+        public void CloseAllResourses()
         {
             foreach (var webDriverInstance in WebDrivers.WebBrowserInstanses)
             {

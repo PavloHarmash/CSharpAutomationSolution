@@ -7,7 +7,7 @@ using Yukon.Enums;
 
 namespace Yukon.Configurations.DriversConfigs
 {
-    public class WebDrivers
+    public sealed class WebDrivers
     {
         public IWebDriver WebBrowser { get; set; }
         public static List<IWebDriver> WebBrowserInstanses { get; set; } = new List<IWebDriver>();
