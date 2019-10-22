@@ -9,6 +9,6 @@ namespace Yukon.Configurations.Users
             = JsonHelper.DeserializeJson<UsersConfigsModel>(@"Configurations\Users\UsersConfigs.json");
 
         public static Customer Customer { get; } = Configs.Customer;
-        public static Supplier Implementer { get; } = Configs.Supplier;
+        public static Supplier Supplier { get; } = Configs.Supplier;
     }
 }
