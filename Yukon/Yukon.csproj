@@ -72,7 +72,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCases\APITests\APIBaseTest.cs" />
     <Compile Include="TestCases\Performance\PerformanceBaseTest.cs" />
-    <Compile Include="TestCases\UITests\Smoke\Register.cs" />
+    <Compile Include="TestCases\UITests\Smoke\LogIn.cs" />
     <Compile Include="TestCases\UITests\UIBaseTest.cs" />
     <Compile Include="Utility\Helpers\JsonHelper.cs" />
   </ItemGroup>
