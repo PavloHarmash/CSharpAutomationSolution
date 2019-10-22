@@ -62,12 +62,13 @@
     <Compile Include="Configurations\TestEnvironment\TestEnvConfigs.cs" />
     <Compile Include="Configurations\Users\UsersConfigs.cs" />
     <Compile Include="Configurations\WebBrowsers\ChromeBrowserConfigs.cs" />
-    <Compile Include="Configurations\DriverConfigs\WebDriverConfigs.cs" />
+    <Compile Include="Configurations\DriversConfigs\WebDrivers.cs" />
     <Compile Include="Enums\BrowserTypes.cs" />
     <Compile Include="Models\Configs\TestEnvConfigModel.cs" />
     <Compile Include="Models\Configs\UsersConfigsModel.cs" />
     <Compile Include="PageObjects\BasePage.cs" />
-    <Compile Include="PageObjects\Header\Header.cs" />
+    <Compile Include="PageObjects\Headers\AppHeader.cs" />
+    <Compile Include="PageObjects\Headers\RegisterHeader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCases\APITests\APIBaseTest.cs" />
     <Compile Include="TestCases\Performance\PerformanceBaseTest.cs" />

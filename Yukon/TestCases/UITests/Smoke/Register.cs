@@ -1,12 +1,13 @@
 ﻿using NUnit.Framework;
 using Yukon.Configurations.TestEnvironment;
 using Yukon.Configurations.Users;
+using Yukon.PageObjects.Headers;
 
 namespace Yukon.TestCases.UITests.Smoke
 {
     public class Register : UIBaseTest
     {
-        public Register() : base(login: UsersConfigs.Customer.Login, password: UsersConfigs.Customer.Password, downloadFiles: true)
+        public Register() : base(downloadFiles: true)
         {
         }
 
@@ -17,8 +18,13 @@ namespace Yukon.TestCases.UITests.Smoke
             var url = TestEnvConfigs.URL;
             var apiPort = TestEnvConfigs.ApiPort;
             var customer = UsersConfigs.Customer;
-            var implementer = UsersConfigs.Implementer;
+            var supplier = UsersConfigs.Supplier;
+
+            RegisterHeader header = PageLoad<RegisterHeader>();
+
+            LounchBrowser();
             
+            RegisterHeader header1 = PageLoad<RegisterHeader>();
         }
     }
 }
