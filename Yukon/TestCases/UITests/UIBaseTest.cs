@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium.Support.UI;
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -8,6 +7,8 @@ using Yukon.Configurations.TestEnvironment;
 using Yukon.Configurations.Users;
 using Yukon.Enums;
 using Yukon.PageObjects;
+using Yukon.Utility;
+using Yukon.Utility.Helpers;
 
 namespace Yukon.TestCases.UITests
 {
@@ -70,11 +71,13 @@ namespace Yukon.TestCases.UITests
             this.Driver = new WebDrivers(browserType, downloadPath);
             this.Driver.WebBrowser.Manage().Window.Maximize();
             this.Driver.WebBrowser.Navigate().GoToUrl(TestEnvConfigs.URL);
-            new WebDriverWait(this.Driver.WebBrowser, TimeSpan.FromSeconds(10)).Until(d => d.Title.Contains("Yukon"));
+            new Waiters(Driver.WebBrowser).UntilPageLoaderDisappear();
         }
 
-        protected T PageLoad<T>() where T : BasePage
-            => Activator.CreateInstance(typeof(T), this.Driver.WebBrowser) as T;
+        protected T LoadPage<T>() where T : BasePage
+        {
+            return new PageCreator(this.Driver.WebBrowser).CreatePage<T>();
+        }
 
         [OneTimeTearDown]
         public void CloseAllResourses()
@@ -82,7 +85,10 @@ namespace Yukon.TestCases.UITests
             foreach (var webDriverInstance in WebDrivers.WebBrowserInstanses)
             {
                 webDriverInstance.Quit();
+                webDriverInstance.Dispose();
             }
+
+            WebDrivers.WebBrowserInstanses.Clear();
 
             if (Directory.Exists(downloadPath))
             {

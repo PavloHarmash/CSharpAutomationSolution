@@ -18,7 +18,7 @@ namespace Yukon.Configurations.DriversConfigs
             {
                 case BrowserTypes.Chrome:
                     WebBrowser = new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory,
-                                                      ChromeBrowserConfigs.GetChromeOptions(downloadPath));
+                                                  ChromeBrowserConfigs.GetChromeOptions(downloadPath));
                     break;
                 default:
                     break;

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.IO;
+using System.Text;
 
 namespace Yukon.Utility.Helpers
 {
@@ -39,7 +40,7 @@ namespace Yukon.Utility.Helpers
             {
                 try
                 {
-                    jsonContent = File.ReadAllText(pathToJson);
+                    jsonContent = File.ReadAllText(pathToJson, encoding: Encoding.UTF8);
                 }
                 catch (IOException)
                 {
