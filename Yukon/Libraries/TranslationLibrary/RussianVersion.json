@@ -1,0 +1,17 @@
+{
+  "RegistrationHeader": {
+    "LogInButton": "Вход"
+  },
+  "ApplicationHeader": {
+    "SearchDropDown": "Поиск",
+    "ManageDropDown": "Работа",
+    "ProfileDropDown": "Профиль",
+    "ExitButton": "Выход"
+  },
+  "Breadcrumbs": {
+    "TaskSearch": "Поиск заданий"
+  },
+  "LoginModal": {
+    "LogInHeader": "Авторизация"
+  }
+}

@@ -2,7 +2,7 @@
 {
     public class TestEnvConfigModel
     {
-        public string URL;
-        public string ApiPort;
+        public string URL { get; set; }
+        public string ApiPort { get; set; }
     }
 }
