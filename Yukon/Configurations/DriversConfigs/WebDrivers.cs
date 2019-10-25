@@ -2,8 +2,8 @@
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
-using Yukon.Configurations.WebBrowsers;
 using Yukon.Enums;
+using static Yukon.Configurations.WebBrowsers.ChromeBrowserConfigs;
 
 namespace Yukon.Configurations.DriversConfigs
 {
@@ -17,8 +17,8 @@ namespace Yukon.Configurations.DriversConfigs
             switch (browserType)
             {
                 case BrowserTypes.Chrome:
-                    WebBrowser = new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory,
-                                                  ChromeBrowserConfigs.GetChromeOptions(downloadPath));
+                    this.WebBrowser = new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory,
+                                                       GetChromeOptions(downloadPath));
                     break;
                 default:
                     break;

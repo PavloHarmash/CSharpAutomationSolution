@@ -40,7 +40,7 @@ namespace Yukon.Utility.Helpers
             {
                 try
                 {
-                    jsonContent = File.ReadAllText(pathToJson, encoding: Encoding.UTF8);
+                    jsonContent = File.ReadAllText(pathToJson, Encoding.UTF8);
                 }
                 catch (IOException)
                 {

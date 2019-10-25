@@ -14,9 +14,11 @@ namespace Yukon.PageObjects
         public BasePage(IWebDriver webDriwer)
         {
             this.WebDriver = webDriwer;
-            Action = new Actions(this.WebDriver);
-            Wait = new Waiters(this.WebDriver);
+            this.Action = new Actions(this.WebDriver);
+            this.Wait = new Waiters(this.WebDriver);
         }
+
+        public static readonly By PageLoader = By.XPath("//div[@class='loader hide']");
 
         protected T ReturnPage<T>() where T : BasePage
         {

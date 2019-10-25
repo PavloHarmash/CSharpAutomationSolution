@@ -6,6 +6,7 @@
         public ApplicationHeader ApplicationHeader { get; set; }
         public Breadcrumbs Breadcrumbs { get; set; }
         public LogInModal LogInModal { get; set; }
+        public MessageAccessModal MessageAccessModal { get; set; }
     }
 
     public class RegistrationHeader
@@ -29,5 +30,10 @@
     public class LogInModal
     {
         public string LogInHeader { get; set; }
+    }
+
+    public class MessageAccessModal
+    {
+        public string MessageAccessHeader { get; set; }
     }
 }

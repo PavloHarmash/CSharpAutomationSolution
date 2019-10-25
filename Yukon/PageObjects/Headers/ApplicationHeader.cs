@@ -8,16 +8,30 @@ namespace Yukon.PageObjects.Headers
     {
         public ApplicationHeader(IWebDriver webDriwer) : base(webDriwer)
         {
-            Assert.IsTrue(Action.GetText(TaskSearch)
-                .Equals(TranslationFor.Breadcrumbs.TaskSearch), "Application Header wasn't downloaded");
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(PageText.ApplicationHeader.SearchDropDown, Action.GetTextOf(this.SearchDropDown)
+                    , "ApplicationHeader wasn't downloaded: Search drop down is absent");
+                Assert.AreEqual(PageText.ApplicationHeader.ManageDropDown, Action.GetTextOf(this.ManageDropDown)
+                    , "ApplicationHeader wasn't downloaded: Manage drop down is absent");
+                Assert.AreEqual(PageText.ApplicationHeader.ProfileDropDown, Action.GetTextOf(this.ProfileDropDown)
+                    , "ApplicationHeader wasn't downloaded: Profile drop down is absent");
+            });
         }
 
-        IWebElement TaskSearch
-            => GetElement(By.XPath($"//span[text()='{TranslationFor.Breadcrumbs.TaskSearch}']"));
+        private IWebElement SearchDropDown
+            => base.GetElement(By.XPath($"//span[normalize-space()='{PageText.ApplicationHeader.SearchDropDown}']"));
+        private IWebElement ManageDropDown
+            => base.GetElement(By.XPath($"//span[normalize-space()='{PageText.ApplicationHeader.ManageDropDown}']"));
+        private IWebElement ProfileDropDown
+            => base.GetElement(By.XPath($"//span[normalize-space()='{PageText.ApplicationHeader.ProfileDropDown}']"));
+        private IWebElement ExitButton
+            => base.GetElement(By.XPath($"//span[@title='{PageText.ApplicationHeader.ExitButton}']"));
 
-        IWebElement ExitButton
-            => GetElement(By.XPath($"//span[@title='{TranslationFor.ApplicationHeader.ExitButton}']"));
-
-        public void ClickExitButton() => Action.Click(ExitButton);
+        public void ClickExitButton()
+        {
+            Action.ClickOn(this.ExitButton);
+            Wait.UntilPageLoaderDisappear();
+        }
     }
 }

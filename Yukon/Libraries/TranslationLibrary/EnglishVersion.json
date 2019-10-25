@@ -1,0 +1,20 @@
+{
+  "RegistrationHeader": {
+    "LogInButton": "Log in"
+  },
+  "ApplicationHeader": {
+    "SearchDropDown": "Search",
+    "ManageDropDown": "Manage",
+    "ProfileDropDown": "Profile",
+    "ExitButton": "Log out"
+  },
+  "Breadcrumbs": {
+    "TaskSearch": "Task search"
+  },
+  "LoginModal": {
+    "LogInHeader": "Log in"
+  },
+  "MessageAccessModal": {
+    "MessageAccessHeader": "Message access"
+  }
+}

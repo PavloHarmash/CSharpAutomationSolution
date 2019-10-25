@@ -10,6 +10,6 @@ namespace Yukon.PageObjects.Headers
 
         private IWebElement YukonLogo => GetElement(By.XPath("//a[@class='b-header__logo']"));
 
-        protected void ClickOnYoukonLogo() => Action.Click(YukonLogo);
+        protected void ClickOnYoukonLogo() => Action.ClickOn(this.YukonLogo);
     }
 }
