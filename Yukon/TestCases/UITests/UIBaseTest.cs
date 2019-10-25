@@ -3,12 +3,13 @@ using System;
 using System.IO;
 using System.Runtime.InteropServices;
 using Yukon.Configurations.DriversConfigs;
-using Yukon.Configurations.TestEnvironment;
-using Yukon.Configurations.Users;
 using Yukon.Enums;
 using Yukon.PageObjects;
+using Yukon.PageObjects.Headers;
 using Yukon.Utility;
 using Yukon.Utility.Helpers;
+using static Yukon.Configurations.TestEnvironment.TestEnvironmentConfigs;
+using static Yukon.Configurations.Users.UsersConfigurations;
 
 namespace Yukon.TestCases.UITests
 {
@@ -16,44 +17,43 @@ namespace Yukon.TestCases.UITests
     {
         private WebDrivers Driver { get; set; }
         private readonly BrowserTypes browserType;
-        protected string Login { get; set; }
-        protected string Password { get; set; }
+        public static AppLanguage AppLanguage { get; private set; }
+        protected string Login { get; set; } = User.Customer.Login;
+        protected string Password { get; set; } = User.Customer.Password;
         private readonly bool downloadFiles;
         private string downloadPath = null;
 
         public UIBaseTest() : this(BrowserTypes.Chrome,
-                                   UsersConfigs.Customer.Login,
-                                   UsersConfigs.Customer.Password,
+                                   AppLanguage.Russian,
                                    false)
         {
         }
 
         public UIBaseTest([Optional]BrowserTypes browserType,
-                          [Optional]string login,
-                          [Optional]string password,
+                          [Optional]AppLanguage appLanguage,
                           [Optional]bool downloadFiles)
         {
             this.browserType = browserType;
-            this.Login = login;
-            this.Password = password;
+            UIBaseTest.AppLanguage = appLanguage;
             this.downloadFiles = downloadFiles;
 
-            if (downloadFiles)
+            if (this.downloadFiles)
             {
-                downloadPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"DownloadedFiles");
-                CreateDownloadFilesDirectory(downloadPath);
+                this.downloadPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"DownloadedFiles");
+                this.CreateDownloadFilesDirectory(this.downloadPath);
             }
         }
 
         [OneTimeSetUp]
         public void LounchBrowser()
         {
-            LoadBrowser();
+            this.LoadBrowser();
         }
 
         [SetUp]
         public virtual void LogIn()
         {
+            new RegistrationHeader(this.Driver.WebBrowser).LogInAs(this.Login, this.Password);
         }
 
         private void CreateDownloadFilesDirectory(string pathToDirectory)
@@ -68,10 +68,11 @@ namespace Yukon.TestCases.UITests
 
         private void LoadBrowser()
         {
-            this.Driver = new WebDrivers(browserType, downloadPath);
+            this.Driver = new WebDrivers(this.browserType, this.downloadPath);
             this.Driver.WebBrowser.Manage().Window.Maximize();
-            this.Driver.WebBrowser.Navigate().GoToUrl(TestEnvConfigs.URL);
-            new Waiters(Driver.WebBrowser).UntilPageLoaderDisappear();
+            this.Driver.WebBrowser.Navigate()
+                .GoToUrl(string.Concat(TestEnvConfigs.URL, UIBaseTest.AppLanguage.Description(), "/"));
+            new Waiters(this.Driver.WebBrowser).UntilPageLoaderDisappear();
         }
 
         protected T LoadPage<T>() where T : BasePage
@@ -90,9 +91,9 @@ namespace Yukon.TestCases.UITests
 
             WebDrivers.WebBrowserInstanses.Clear();
 
-            if (Directory.Exists(downloadPath))
+            if (Directory.Exists(this.downloadPath))
             {
-                Directory.Delete(downloadPath, true);
+                Directory.Delete(this.downloadPath, true);
             }
         }
     }

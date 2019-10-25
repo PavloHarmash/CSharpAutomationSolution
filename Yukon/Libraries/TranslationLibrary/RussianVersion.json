@@ -13,5 +13,8 @@
   },
   "LoginModal": {
     "LogInHeader": "Авторизация"
+  },
+  "MessageAccessModal": {
+    "MessageAccessHeader": "Доступ к переписке"
   }
 }

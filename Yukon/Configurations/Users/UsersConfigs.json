@@ -1,10 +1,14 @@
 {
   "Customer": {
-    "Login": "11172",
-    "Password": "Dummy#123"
+    "Login": "26366",
+    "Password": "Dummy#123",
+    "MessageLogPassword": "Tip",
+    "Hint": "Подсказка"
   },
   "Supplier": {
-    "Login": "-----",
-    "Password": "Dummy#123"
+    "Login": "59623",
+    "Password": "Dummy#123",
+    "MessageLogPassword": "Supplier",
+    "Hint": "SUPPLIER"
   }
 }

@@ -2,7 +2,7 @@
 
 namespace Yukon.Configurations.WebBrowsers
 {
-    public class ChromeBrowserConfigs
+    public static class ChromeBrowserConfigs
     {
         public static ChromeOptions GetChromeOptions(string downloadPath = null)
         {

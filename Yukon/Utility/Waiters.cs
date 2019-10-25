@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
+using Yukon.PageObjects;
 
 namespace Yukon.Utility
 {
@@ -14,17 +15,17 @@ namespace Yukon.Utility
         public Waiters(IWebDriver webDriver)
         {
             this.WebDriver = webDriver;
-            this.wait = new WebDriverWait(this.WebDriver, defaultTimeout);
+            this.wait = new WebDriverWait(this.WebDriver, this.defaultTimeout);
         }
 
-        private static By PageLoader = By.XPath("//div[@class='loader hide']");
+        public bool UntilPageLoaderDisappear() => wait.Until(this.WaitForElementIsDisplayed);
 
         private Func<IWebDriver, bool> WaitForElementIsDisplayed
             = new Func<IWebDriver, bool>((webDriver) =>
         {
             try
             {
-                webDriver.FindElement(PageLoader);
+                webDriver.FindElement(BasePage.PageLoader);
                 return true;
             }
             catch (Exception)
@@ -33,8 +34,5 @@ namespace Yukon.Utility
                 return false;
             }
         });
-
-        public bool UntilPageLoaderDisappear()
-            => wait.Until(WaitForElementIsDisplayed);
     }
 }

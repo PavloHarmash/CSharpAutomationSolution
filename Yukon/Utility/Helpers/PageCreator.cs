@@ -13,6 +13,6 @@ namespace Yukon.Utility.Helpers
             this.webDriver = webDriver;
         }
 
-        public T CreatePage<T>() where T : BasePage => Activator.CreateInstance(typeof(T), webDriver) as T;
+        public T CreatePage<T>() where T : BasePage => Activator.CreateInstance(typeof(T), this.webDriver) as T;
     }
 }
