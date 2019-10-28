@@ -1,5 +1,8 @@
 ﻿using OpenQA.Selenium;
 using System.Collections.Generic;
+using Yukon.Libraries.TranslationLibrary;
+using Yukon.Models.Translation;
+using Yukon.TestCases.UITests;
 using Yukon.Utility;
 using Yukon.Utility.Helpers;
 
@@ -10,12 +13,14 @@ namespace Yukon.PageObjects
         private IWebDriver WebDriver { get; set; }
         protected Actions Action { get; set; }
         protected Waiters Wait { get; set; }
+        protected TranslationLibraryModel PageText { get; set; }
 
         public BasePage(IWebDriver webDriwer)
         {
             this.WebDriver = webDriwer;
             this.Action = new Actions(this.WebDriver);
             this.Wait = new Waiters(this.WebDriver);
+            this.PageText = new TranslationLibrary(UIBaseTest.AppLanguage).Library;
         }
 
         public static readonly By PageLoader = By.XPath("//div[@class='loader hide']");

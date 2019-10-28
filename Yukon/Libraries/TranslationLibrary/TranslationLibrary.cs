@@ -1,30 +1,28 @@
-﻿using System;
+﻿using Yukon.Enums;
 using Yukon.Models.Translation;
-using Yukon.TestCases.UITests;
 using Yukon.Utility.Helpers;
-using Yukon.Enums;
 
 namespace Yukon.Libraries.TranslationLibrary
 {
-    public static class TranslationLibrary
+    public class TranslationLibrary
     {
-        private static readonly Func<TranslationLibraryModel, TranslationLibraryModel> LibraryModel = model =>
+        public TranslationLibraryModel Library { get; }
+
+        public TranslationLibrary(AppLanguage language)
         {
-            switch (UIBaseTest.AppLanguage)
+            switch (language)
             {
                 case AppLanguage.English:
-                    return JsonHelper.DeserializeJson<TranslationLibraryModel>(
+                    Library = JsonHelper.DeserializeJson<TranslationLibraryModel>(
                         @"Libraries\TranslationLibrary\EnglishVersion.json");
+                    break;
                 case AppLanguage.Russian:
-                    return JsonHelper.DeserializeJson<TranslationLibraryModel>(
+                    Library = JsonHelper.DeserializeJson<TranslationLibraryModel>(
                         @"Libraries\TranslationLibrary\RussianVersion.json");
+                    break;
                 default:
                     break;
             }
-
-            return null;
-        };
-
-        public static readonly TranslationLibraryModel PageText = LibraryModel(PageText);
+        }
     }
 }

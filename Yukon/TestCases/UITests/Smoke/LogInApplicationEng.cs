@@ -1,36 +1,23 @@
 ﻿using NUnit.Framework;
-using System.Collections.Generic;
 using Yukon.Enums;
 using Yukon.PageObjects.Headers;
 using Yukon.PageObjects.Modals.HeaderModals;
-using static Yukon.Configurations.Users.UsersConfigurations;
+using Yukon.TestData.UITests;
 
 namespace Yukon.TestCases.UITests.Smoke
 {
-    public class LogInApplication : UIBaseTest
+    public class LogInApplicationEng : UIBaseTest
     {
-        public LogInApplication() : base(appLanguage: AppLanguage.English)
+        public LogInApplicationEng() : base(appLanguage: AppLanguage.English)
         {
         }
                 
         public override void LogIn() { }
 
-        public class UsersCredentials
-        {
-            public static IEnumerable<TestCaseData> TestCases
-            {
-                get
-                {
-                    yield return new TestCaseData(User.Customer.Login, User.Customer.Password, User.Customer.MessageLogPassword);
-                    yield return new TestCaseData(User.Supplier.Login, User.Supplier.Password, User.Supplier.MessageLogPassword);
-                }
-            }
-        }
-
         [Test]
-        [Description("This test verifies registration in application both as Customer and Supplier")]
+        [Description("This test verifies registration in application both as Customer and Supplier English version")]
         [TestCaseSource(typeof(UsersCredentials), "TestCases")]
-        public void Log_In_Application(string login, string password, string messagePassword)
+        public void Log_In_Application_Eng(string login, string password, string messagePassword)
         {
             LogInModal logInModal
                 = LoadPage<RegistrationHeader>()

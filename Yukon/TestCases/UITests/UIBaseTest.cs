@@ -35,6 +35,7 @@ namespace Yukon.TestCases.UITests
         {
             this.browserType = browserType;
             UIBaseTest.AppLanguage = appLanguage;
+
             this.downloadFiles = downloadFiles;
 
             if (this.downloadFiles)

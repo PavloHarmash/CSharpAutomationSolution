@@ -68,6 +68,8 @@
     <Compile Include="Libraries\TranslationLibrary\TranslationLibrary.cs" />
     <Compile Include="Models\Configs\TestEnvConfigModel.cs" />
     <Compile Include="Models\Configs\UsersConfigsModel.cs" />
+    <Compile Include="TestCases\UITests\Regression\CreateTaskEng.cs" />
+    <Compile Include="TestData\UITests\LogInTestData.cs" />
     <Compile Include="Models\Translation\TranslationLibraryModel.cs" />
     <Compile Include="PageObjects\BasePage.cs" />
     <Compile Include="PageObjects\Headers\ApplicationHeader.cs" />
@@ -79,7 +81,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCases\APITests\APIBaseTest.cs" />
     <Compile Include="TestCases\Performance\PerformanceBaseTest.cs" />
-    <Compile Include="TestCases\UITests\Smoke\LogInApplication.cs" />
+    <Compile Include="TestCases\UITests\Smoke\LogInApplicationEng.cs" />
+    <Compile Include="TestCases\UITests\Smoke\LogInApplicationRus.cs" />
     <Compile Include="TestCases\UITests\UIBaseTest.cs" />
     <Compile Include="Utility\Actions.cs" />
     <Compile Include="Extentions\EnumExtensions.cs" />
@@ -109,7 +112,6 @@
     <Content Include="Models\API\RequestModels\README.txt" />
     <Content Include="Models\API\ResponseModels\README.txt" />
     <Content Include="Models\TestData\README.txt" />
-    <Content Include="TestData\README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
