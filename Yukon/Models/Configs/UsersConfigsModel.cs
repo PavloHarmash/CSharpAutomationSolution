@@ -6,7 +6,7 @@
         public Supplier Supplier { get; set; }
     }
 
-    public class User
+    public class Users
     {
         public string Login { get; set; }
         public string Password { get; set; }
@@ -14,11 +14,11 @@
         public string Hint { get; set; }
     }
 
-    public class Customer : User
+    public class Customer : Users
     {
     }
 
-    public class Supplier : User
+    public class Supplier : Users
     {
     }
 }
