@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using Yukon.Models.Configs;
 using Yukon.PageObjects.Modals.HeaderModals;
-using static Yukon.Libraries.TranslationLibrary.TranslationLibrary;
 
 namespace Yukon.PageObjects.Headers
 {
@@ -25,14 +25,18 @@ namespace Yukon.PageObjects.Headers
             return ReturnPage<LogInModal>();
         }
 
-        public void LogInAs(string login, string password)
+        public void LogInAs(Users client)
         {
             LogInModal loginModal = ClickOnLogInLink();
             loginModal.ClearLoginTextField();
-            loginModal.InputLoginTextfield(login);
-            loginModal.InputPasswordTextfield(password);
+            loginModal.InputLoginTextfield(client.Login);
+            loginModal.InputPasswordTextfield(client.Password);
             loginModal.ClickRememberLoginCheckBox();
-            loginModal.ClickLogInButton();
+
+            MessageAccessModal messageAccessModal = loginModal.ClickLogInButton();
+            messageAccessModal.InputMessageLogPassword(client.MessageLogPassword);
+            messageAccessModal.ClickOnRememberPassword();
+            messageAccessModal.ClickOnAccessButton();
         }
     }
 }

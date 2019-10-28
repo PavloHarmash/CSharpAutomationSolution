@@ -107,8 +107,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Interfaces\README.txt" />
-    <Content Include="LFSUploadFiles\README.txt" />
     <Content Include="Models\API\RequestModels\README.txt" />
     <Content Include="Models\API\ResponseModels\README.txt" />
     <Content Include="Models\TestData\README.txt" />
