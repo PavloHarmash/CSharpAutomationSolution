@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Yukon.PageObjects.Headers;
-using static Yukon.Libraries.TranslationLibrary.TranslationLibrary;
 
 namespace Yukon.PageObjects.Modals.HeaderModals
 {
