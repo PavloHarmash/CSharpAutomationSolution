@@ -4,6 +4,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using Yukon.Configurations.DriversConfigs;
 using Yukon.Enums;
+using Yukon.Libraries.TranslationLibrary;
 using Yukon.Models.Configs;
 using Yukon.PageObjects;
 using Yukon.PageObjects.Headers;
@@ -34,7 +35,7 @@ namespace Yukon.TestCases.UITests
                           [Optional]bool downloadFiles)
         {
             this.browserType = browserType;
-            BasePage.AppLanguage = appLanguage;
+            BasePage.Text = new TranslationLibrary(appLanguage).Library;
 
             this.downloadFiles = downloadFiles;
 
@@ -54,7 +55,7 @@ namespace Yukon.TestCases.UITests
         [SetUp]
         public virtual void LogIn()
         {
-            new RegistrationHeader(this.Driver.WebBrowser).LogInAs(Client);
+            new RegistrationHeader(this.Driver.WebBrowser).LogInAs(this.Client);
         }
 
         private void CreateDownloadFilesDirectory(string pathToDirectory)
@@ -72,7 +73,7 @@ namespace Yukon.TestCases.UITests
             this.Driver = new WebDrivers(this.browserType, this.downloadPath);
             this.Driver.WebBrowser.Manage().Window.Maximize();
             this.Driver.WebBrowser.Navigate()
-                .GoToUrl(string.Concat(TestEnvConfigs.URL, BasePage.AppLanguage.Description(), "/"));
+                .GoToUrl(string.Concat(TestEnvConfigs.URL, TranslationLibrary.AppLanguage.Description(), "/"));
             new Waiters(this.Driver.WebBrowser).UntilPageLoaderDisappear();
         }
 

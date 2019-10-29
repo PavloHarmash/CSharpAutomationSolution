@@ -6,11 +6,15 @@ namespace Yukon.Libraries.TranslationLibrary
 {
     public class TranslationLibrary
     {
+        public static AppLanguage AppLanguage { get; set; }
+
         public TranslationLibraryModel Library { get; }
 
         public TranslationLibrary(AppLanguage language)
         {
-            switch (language)
+            AppLanguage = language;
+
+            switch (AppLanguage)
             {
                 case AppLanguage.English:
                     Library = JsonHelper.DeserializeJson<TranslationLibraryModel>(

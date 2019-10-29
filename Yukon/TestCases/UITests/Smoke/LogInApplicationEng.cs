@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using Yukon.Enums;
+using Yukon.Models.Configs;
 using Yukon.PageObjects.Headers;
-using Yukon.PageObjects.Modals.HeaderModals;
 using Yukon.TestData.UITests;
 
 namespace Yukon.TestCases.UITests.Smoke
@@ -17,23 +17,11 @@ namespace Yukon.TestCases.UITests.Smoke
         [Test]
         [Description("This test verifies registration in application both as Customer and Supplier English version")]
         [TestCaseSource(typeof(UsersCredentials), "TestCases")]
-        public void Log_In_Application_Eng(string login, string password, string messagePassword)
+        public void Log_In_Application_Eng(Users client)
         {
-            LogInModal logInModal
-                = LoadPage<RegistrationHeader>()
-                .ClickOnLogInLink();
+            ApplicationHeader appHeader
+                = LoadPage<RegistrationHeader>().LogInAs(client);
 
-            logInModal.ClearLoginTextField();
-            logInModal.InputLoginTextfield(login);
-            logInModal.InputPasswordTextfield(password);
-            logInModal.ClickRememberLoginCheckBox();
-
-            MessageAccessModal messageAccessModal = logInModal.ClickLogInButton();
-
-            messageAccessModal.InputMessageLogPassword(messagePassword);
-            messageAccessModal.ClickOnRememberPassword();
-
-            ApplicationHeader appHeader = messageAccessModal.ClickOnAccessButton();
             appHeader.ClickExitButton();
         }
     }

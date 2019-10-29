@@ -3,7 +3,7 @@
     public class UsersConfigsModel
     {
         public Customer Customer { get; set; }
-        public Supplier Supplier { get; set; }
+        public Contractor Contractor { get; set; }
     }
 
     public class Users
@@ -18,7 +18,7 @@
     {
     }
 
-    public class Supplier : Users
+    public class Contractor : Users
     {
     }
 }
