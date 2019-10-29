@@ -7,19 +7,19 @@ namespace Yukon.PageObjects.Manage.Tasks
     {
         public TasksPage(IWebDriver webDriwer) : base(webDriwer)
         {
-            Assert.AreEqual(Text.TasksPage.SidebarLinkTasks, Action.GetTextOf(SidebarTaskLink),
+            Assert.AreEqual(Text.TasksPage.SidebarLinkTasks, Action.GetTextOf(this.SidebarTaskLink),
                 "Tasks Page was not downloaded");
         }
 
         private IWebElement SidebarTaskLink
-            => GetElement(By.XPath("//div[@class='manage-sidebar-nav']/a[contains(@class, 'item_active')]"));
+            => base.GetElement(By.XPath("//div[@class='manage-sidebar-nav']/a[contains(@class, 'item_active')]"));
 
         private IWebElement CreateTaskFolder
-            => GetElement(By.XPath($"//div[@class=' folder-inner_link']/div[normalize-space()='{Text.TasksPage.CreateTaskFolder}']"));
+            => base.GetElement(By.XPath($"//div[@class=' folder-inner_link']/div[normalize-space()='{Text.TasksPage.CreateTaskFolder}']"));
 
         public CreateTaskPage ClickOnCreateTaskFolder()
         {
-            Action.ClickOn(CreateTaskFolder);
+            Action.ClickOn(this.CreateTaskFolder);
             Wait.UntilPageLoaderDisappear();
             return ReturnPage<CreateTaskPage>();
         }

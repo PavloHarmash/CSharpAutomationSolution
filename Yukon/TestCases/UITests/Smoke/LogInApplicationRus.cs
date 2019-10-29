@@ -15,7 +15,7 @@ namespace Yukon.TestCases.UITests.Smoke
         public override void LogIn() { }
 
         [Test]
-        [Description("This test verifies registration in application both as Customer and Supplier English version")]
+        [Description("This test verifies registration in application both as Customer and Supplier Russian version")]
         [TestCaseSource(typeof(UsersCredentials), "TestCases")]
         public void Log_In_Application_Rus(Users client)
         {

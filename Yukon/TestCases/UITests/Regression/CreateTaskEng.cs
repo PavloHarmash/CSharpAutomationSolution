@@ -12,7 +12,7 @@ namespace Yukon.TestCases.UITests.Regression
 
         public CreateTaskEng() : base()
         {
-            task = new TaskData();
+            this.task = new TaskData();
         }
 
         [Test]
@@ -25,8 +25,8 @@ namespace Yukon.TestCases.UITests.Regression
 
             TasksPage taskPage = manageDropDown.ClickOnTasksMenuItem();
             CreateTaskPage createTask = taskPage.ClickOnCreateTaskFolder();
-            createTask.InputTitleTextField(task.Title);
-            createTask.InputDescriptionField(task.Description);
+            createTask.InputTitleTextField(this.task.Title);
+            createTask.InputDescriptionField(this.task.Description);
             createTask.ClickOnSpecialitiesDropDown();
         }
     }

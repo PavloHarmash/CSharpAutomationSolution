@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using Yukon.PageObjects.Headers;
 
 namespace Yukon.PageObjects.Headers.HeaderModals
 {
@@ -8,17 +7,17 @@ namespace Yukon.PageObjects.Headers.HeaderModals
     {
         public MessageAccessModal(IWebDriver webDriwer) : base(webDriwer)
         {
-            Assert.AreEqual(Text.MessageAccessModal.MessageAccessHeader, GetModalHeader(),
+            Assert.AreEqual(Text.MessageAccessModal.MessageAccessHeader, base.GetModalHeader(),
                             "Log In modal window wasn't downloaded");
         }
 
-        public void InputMessageLogPassword(string password) => InputPassword(password);
+        public void InputMessageLogPassword(string password) => base.InputPassword(password);
 
-        public void ClickOnRememberPassword() => ClickCheckBox();
+        public void ClickOnRememberPassword() => base.ClickCheckBox();
 
         public ApplicationHeader ClickOnAccessButton()
         {
-            ClickButton();
+            base.ClickButton();
             Wait.UntilPageLoaderDisappear();
             return ReturnPage<ApplicationHeader>();
         }

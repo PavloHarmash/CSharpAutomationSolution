@@ -8,22 +8,22 @@ namespace Yukon.PageObjects.Headers.HeaderModals
         {
         }
 
-        protected IWebElement ModalHeader => GetElement(By.XPath("//header[@class='b-modal__header']/h3"));
+        protected IWebElement ModalHeader => base.GetElement(By.XPath("//header[@class='b-modal__header']/h3"));
 
         private IWebElement PasswordTextField
-            => GetElement(By.XPath("//div[@class='b-modal__body']//input[@type='password']"));
+            => base.GetElement(By.XPath("//div[@class='b-modal__body']//input[@type='password']"));
 
         private IWebElement CheckBox
-            => GetElement(By.XPath("//span[@class='b-checkbox__fake-mark']"));
+            => base.GetElement(By.XPath("//span[@class='b-checkbox__fake-mark']"));
 
-        private IWebElement SubmitButton => GetElement(By.XPath("//button[contains(@class, 'btn btn-primary')]"));
+        private IWebElement SubmitButton => base.GetElement(By.XPath("//button[contains(@class, 'btn btn-primary')]"));
 
-        protected string GetModalHeader() => Action.GetTextOf(ModalHeader);
+        protected string GetModalHeader() => Action.GetTextOf(this.ModalHeader);
 
-        protected void InputPassword(string password) => Action.SendKeysTo(PasswordTextField, password);
+        protected void InputPassword(string password) => Action.SendKeysTo(this.PasswordTextField, password);
 
-        protected void ClickCheckBox() => Action.ClickOn(CheckBox);
+        protected void ClickCheckBox() => Action.ClickOn(this.CheckBox);
 
-        protected void ClickButton() => Action.ClickOn(SubmitButton);
+        protected void ClickButton() => Action.ClickOn(this.SubmitButton);
     }
 }

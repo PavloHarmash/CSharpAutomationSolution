@@ -17,26 +17,25 @@ namespace Yukon.TestData.UITests.CreateTask
 
         public TaskData()
         {
-            Title = "Auto Tester Needed";
-            Description = string.Concat("We’re working with Booboo, one of the leader on the travel market USA.\n",
+            this.Title = "Auto Tester Needed";
+            this.Description = string.Concat("We’re working with Booboo, one of the leader on the travel market USA.\n",
                 "It’s a technology company that powers leading online and hybrid travel agencies like CheapOair, OneTravel, and Travelong.\n",
                 "We use technology to help people take much-needed vacations or get the best deals on travel through our products.\n",
                 "We are looking for a highly motivated Automation QA Engineer possessing with 2+ years of experience testing(API),\n",
                 "who can take ownership, drive communications, being proactive, manage project goals, contribute to product strategy and help define best practices.");
-            Speciality
+            this.Speciality
                 = (BasePage.Text.CreateTaskPage.SpecialitiesValues.Area.WebMobileAndSoftwareDev,
                    BasePage.Text.CreateTaskPage.SpecialitiesValues.Speciality.QAEngineer,
                    BasePage.Text.CreateTaskPage.SpecialitiesValues.Levels.Middle);
-            Currency = BasePage.Text.CreateTaskPage.CurrencyValues.USDollar;
-            Budget = "1500";
-            RewardType = BasePage.Text.CreateTaskPage.RewardTypeValues.PerMonth;
-            ContractorsLanguages
+            this.Currency = BasePage.Text.CreateTaskPage.CurrencyValues.USDollar;
+            this.Budget = "1500";
+            this.RewardType = BasePage.Text.CreateTaskPage.RewardTypeValues.PerMonth;
+            this.ContractorsLanguages
                 = (BasePage.Text.CreateTaskPage.Languages.Russian,
                    BasePage.Text.CreateTaskPage.Languages.English);
-            Visibility = BasePage.Text.CreateTaskPage.VisibilityValues.VisibleToAllUsers;
-            Skills = BasePage.Text.CreateTaskPage.Skills;
-            Duration = BasePage.Text.CreateTaskPage.Duration.Months;
-
+            this.Visibility = BasePage.Text.CreateTaskPage.VisibilityValues.VisibleToAllUsers;
+            this.Skills = BasePage.Text.CreateTaskPage.Skills;
+            this.Duration = BasePage.Text.CreateTaskPage.Duration.Months;
         }
     }
 }
