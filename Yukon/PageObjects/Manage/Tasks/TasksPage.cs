@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 
-namespace Yukon.PageObjects.Tasks
+namespace Yukon.PageObjects.Manage.Tasks
 {
     public class TasksPage : BasePage
     {
@@ -19,7 +19,8 @@ namespace Yukon.PageObjects.Tasks
 
         public CreateTaskPage ClickOnCreateTaskFolder()
         {
-            Action.ClickOn(CreateTaskFolder);
+            Action.ClickOn(this.CreateTaskFolder);
+            Wait.UntilPageLoaderDisappear();
             return ReturnPage<CreateTaskPage>();
         }
     }

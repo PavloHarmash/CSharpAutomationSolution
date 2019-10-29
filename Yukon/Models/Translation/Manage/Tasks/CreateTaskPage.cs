@@ -1,4 +1,4 @@
-﻿namespace Yukon.Models.Translation.Tasks
+﻿namespace Yukon.Models.Translation.Manage.Tasks
 {
     public class CreateTaskPage
     {
@@ -27,12 +27,12 @@
 
     public class Area
     {
-        public string ITAndNetworking { get; set; }
+        public string WebMobileAndSoftwareDev { get; set; }
     }
 
     public class Speciality
     {
-        public string NetworkEngineer { get; set; }
+        public string QAEngineer { get; set; }
     }
 
     public class Levels

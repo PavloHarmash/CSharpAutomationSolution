@@ -1,10 +1,10 @@
 ﻿using OpenQA.Selenium;
 
-namespace Yukon.PageObjects.Modals
+namespace Yukon.PageObjects.Headers.HeaderModals
 {
-    public class BaseModal : BasePage
+    public class BaseHeaderModal : BasePage
     {
-        public BaseModal(IWebDriver webDriwer) : base(webDriwer)
+        public BaseHeaderModal(IWebDriver webDriwer) : base(webDriwer)
         {
         }
 
@@ -20,10 +20,10 @@ namespace Yukon.PageObjects.Modals
 
         protected string GetModalHeader() => Action.GetTextOf(this.ModalHeader);
 
-        protected void InputPassword(string password) => Action.SendKeysTo(PasswordTextField, password);
+        protected void InputPassword(string password) => Action.SendKeysTo(this.PasswordTextField, password);
 
         protected void ClickCheckBox() => Action.ClickOn(this.CheckBox);
 
-        protected void ClickButton() => Action.ClickOn(SubmitButton);
+        protected void ClickButton() => Action.ClickOn(this.SubmitButton);
     }
 }

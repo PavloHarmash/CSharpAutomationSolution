@@ -11,6 +11,6 @@ namespace Yukon.PageObjects.Headers.Dropdowns
         private IWebElement MenuItem(string item)
             => base.GetElement(By.XPath($"//ul[@class='b-submenu']//a[normalize-space()='{item}']"));
 
-        protected void ClickMenuItem(string item) => this.MenuItem(item);
+        protected void ClickMenuItem(string item) => Action.ClickOn(this.MenuItem(item));
     }
 }

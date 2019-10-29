@@ -1,4 +1,4 @@
-﻿namespace Yukon.Models.Translation.Modals.HeaderModals
+﻿namespace Yukon.Models.Translation.Headers.HeaderModals
 {
     public class LogInModal
     {

@@ -1,14 +1,13 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using Yukon.PageObjects.Headers;
 
-namespace Yukon.PageObjects.Modals.HeaderModals
+namespace Yukon.PageObjects.Headers.HeaderModals
 {
-    public class MessageAccessModal : BaseModal
+    public class MessageAccessModal : BaseHeaderModal
     {
         public MessageAccessModal(IWebDriver webDriwer) : base(webDriwer)
         {
-            Assert.AreEqual(Text.MessageAccessModal.MessageAccessHeader, GetModalHeader(),
+            Assert.AreEqual(Text.MessageAccessModal.MessageAccessHeader, base.GetModalHeader(),
                             "Log In modal window wasn't downloaded");
         }
 

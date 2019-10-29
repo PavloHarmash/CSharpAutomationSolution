@@ -17,11 +17,11 @@ namespace Yukon.Libraries.TranslationLibrary
             switch (AppLanguage)
             {
                 case AppLanguage.English:
-                    Library = JsonHelper.DeserializeJson<TranslationLibraryModel>(
+                    this.Library = JsonHelper.DeserializeJson<TranslationLibraryModel>(
                         @"Libraries\TranslationLibrary\EnglishVersion.json");
                     break;
                 case AppLanguage.Russian:
-                    Library = JsonHelper.DeserializeJson<TranslationLibraryModel>(
+                    this.Library = JsonHelper.DeserializeJson<TranslationLibraryModel>(
                         @"Libraries\TranslationLibrary\RussianVersion.json");
                     break;
                 default:

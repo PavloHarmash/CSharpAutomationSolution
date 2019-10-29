@@ -1,18 +1,18 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 
-namespace Yukon.PageObjects.Modals.HeaderModals
+namespace Yukon.PageObjects.Headers.HeaderModals
 {
-    public class LogInModal : BaseModal
+    public class LogInModal : BaseHeaderModal
     {
         public LogInModal(IWebDriver webDriver) : base(webDriver)
         {
-            Assert.AreEqual(Text.LogInModal.LogInHeader, GetModalHeader(),
+            Assert.AreEqual(Text.LogInModal.LogInHeader, base.GetModalHeader(),
                             "Log In modal window wasn't downloaded");
         }
-        
+
         private IWebElement LoginTextField
-            => base.GetElement(By.XPath("//div[@class='b-modal__body']//input[contains(@class, 't-login__name')]"));
+            => GetElement(By.XPath("//div[@class='b-modal__body']//input[contains(@class, 't-login__name')]"));
 
 
         public void ClearLoginTextField() => Action.Clear(this.LoginTextField);
