@@ -9,7 +9,7 @@ namespace Yukon.PageObjects.Headers
     {
         public RegistrationHeader(IWebDriver webDriver) : base(webDriver)
         {
-            Assert.AreEqual(PageText.RegistrationHeader.LogInButton, Action.GetTextOf(this.LogInLink),
+            Assert.AreEqual(Text.RegistrationHeader.LogInButton, Action.GetTextOf(this.LogInLink),
                             "Registration Header wasn't downloaded");
         }
 
@@ -25,7 +25,7 @@ namespace Yukon.PageObjects.Headers
             return ReturnPage<LogInModal>();
         }
 
-        public void LogInAs(Users client)
+        public ApplicationHeader LogInAs(Users client)
         {
             LogInModal loginModal = ClickOnLogInLink();
             loginModal.ClearLoginTextField();
@@ -36,7 +36,7 @@ namespace Yukon.PageObjects.Headers
             MessageAccessModal messageAccessModal = loginModal.ClickLogInButton();
             messageAccessModal.InputMessageLogPassword(client.MessageLogPassword);
             messageAccessModal.ClickOnRememberPassword();
-            messageAccessModal.ClickOnAccessButton();
+            return messageAccessModal.ClickOnAccessButton();
         }
     }
 }

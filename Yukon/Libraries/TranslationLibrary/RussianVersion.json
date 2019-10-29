@@ -16,5 +16,74 @@
   },
   "MessageAccessModal": {
     "MessageAccessHeader": "Доступ к переписке"
+  },
+  "SearchDropDown": {
+    "Tasks": "Задания",
+    "Services": "Услуги",
+    "Contractors": "Исполнители"
+  },
+  "ManageDropDown": {
+    "Tasks": "Задания",
+    "Services": "Услуги"
+  },
+  "ProfileDropDown": {
+    "MyPage": "Моя страница",
+    "Messages": "Сообщения",
+    "Finance": "Финансы",
+    "Events": "События",
+    "Settings": "Настройки"
+  },
+  "TasksPage": {
+    "SidebarLinkTasks": "Задания",
+    "CreateTaskFolder": "Создать задание"
+  },
+  "CreateTaskPage": {
+    "HeaderTitle": "Создать задание",
+    "TitleInput": "Название",
+    "DescriptionInput": "Описание",
+    "SpecialitiesDropDown": "Профессии",
+    "CurrencyDropDown": "Валюта",
+    "BudgetInput": "Бюджет",
+    "RewardTypeDropDown": "Тип бюджета",
+    "AdditionalInformationLink": "Дополнительная информация",
+    "ContractorsLanguages": "Языки исполнителя",
+    "VisibilityDropDown": "Видимость",
+    "SkillsDropDown": "Навыки",
+    "DurationDropDown": "Сроки",
+    "EmploymentDropDown": "Занятость",
+
+    "SpecialitiesValues": {
+      "Area": {
+        "ITAndNetworking": "Программист"
+      },
+      "Speciality": {
+        "NetworkEngineer": "Тестировщик"
+      },
+      "Levels": {
+        "Junior": "Junior",
+        "Middle": "Middle",
+        "Senior": "Senior"
+      }
+    },
+    "CurrencyValues": {
+      "USDollar": "Доллар США (USD)"
+    },
+    "RewardTypeValues": {
+      "PerMonth": "В месяц"
+    },
+    "Languages": {
+      "Russian": "Русский",
+      "English": "English"
+    },
+    "VisibilityValues": {
+      "VisibleToAllUsers": "Всем в интернете"
+    },
+    "Skills": "C#",
+    "Duration": {
+      "Months": "Месяцы"
+    },
+    "Employment": {
+      "FullTime": "Полная занятость"
+    }
   }
 }

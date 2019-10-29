@@ -16,5 +16,74 @@
   },
   "MessageAccessModal": {
     "MessageAccessHeader": "Message access"
+  },
+  "SearchDropDown": {
+    "Tasks": "Tasks",
+    "Services": "Services",
+    "Contractors": "Contractors"
+  },
+  "ManageDropDown": {
+    "Tasks": "Tasks",
+    "Services": "Services"
+  },
+  "ProfileDropDown": {
+    "MyPage": "My page",
+    "Messages": "Messages",
+    "Finance": "Finance",
+    "Events": "Events",
+    "Settings": "Settings"
+  },
+  "TasksPage": {
+    "SidebarLinkTasks": "Tasks",
+    "CreateTaskFolder": "Create task"
+  },
+  "CreateTaskPage": {
+    "HeaderTitle": "Create task",
+    "TitleInput": "Title",
+    "DescriptionInput": "Description",
+    "SpecialitiesDropDown": "Specialities",
+    "CurrencyDropDown": "Currency",
+    "BudgetInput": "Budget",
+    "RewardTypeDropDown": "Reward type",
+    "AdditionalInformationLink": "Additional information",
+    "ContractorsLanguages": "Contractor's languages",
+    "VisibilityDropDown": "Visibility",
+    "SkillsDropDown": "Skills",
+    "DurationDropDown": "Duration",
+    "EmploymentDropDown": "Employment",
+
+    "SpecialitiesValues": {
+      "Area": {
+        "WebMobileAndSoftwareDev": "Web, Mobile & Software Dev"
+      },
+      "Speciality": {
+        "NetworkEngineer": "QA Engineer"
+      },
+      "Levels": {
+        "Junior": "Junior",
+        "Middle": "Middle",
+        "Senior": "Senior"
+      }
+    },
+    "CurrencyValues": {
+      "USDollar": "US Dollar (USD)"
+    },
+    "RewardTypeValues": {
+      "PerMonth": "Per month"
+    },
+    "Languages": {
+      "Russian": "Русский",
+      "English": "English"
+    },
+    "VisibilityValues": {
+      "VisibleToAllUsers": "Visible to all users"
+    },
+    "Skills": "C#",
+    "Duration": {
+      "Months": "Months"
+    },
+    "Employment": {
+      "FullTime": "Full-time"
+    }
   }
 }

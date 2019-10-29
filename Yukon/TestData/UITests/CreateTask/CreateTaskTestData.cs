@@ -1,8 +1,7 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
-using static Yukon.Configurations.Users.UsersConfigurations;
 
-namespace Yukon.TestData.UITests
+namespace Yukon.TestData.UITests.CreateTask
 {
     public class UsersCredentials
     {
@@ -10,8 +9,7 @@ namespace Yukon.TestData.UITests
         {
             get
             {
-                yield return new TestCaseData(User.Customer);
-                yield return new TestCaseData(User.Contractor);
+                yield return new TestCaseData(new CreateTaskDataClass());
             }
         }
     }

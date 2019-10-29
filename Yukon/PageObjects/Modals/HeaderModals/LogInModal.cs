@@ -7,7 +7,7 @@ namespace Yukon.PageObjects.Modals.HeaderModals
     {
         public LogInModal(IWebDriver webDriver) : base(webDriver)
         {
-            Assert.AreEqual(PageText.LogInModal.LogInHeader, GetModalHeader(),
+            Assert.AreEqual(Text.LogInModal.LogInHeader, GetModalHeader(),
                             "Log In modal window wasn't downloaded");
         }
         
