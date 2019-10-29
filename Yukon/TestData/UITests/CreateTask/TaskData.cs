@@ -2,7 +2,7 @@
 
 namespace Yukon.TestData.UITests.CreateTask
 {
-    class CreateTaskDataClass
+    public class TaskData
     {
         public string Title { get; set; }
         public string Description { get; set; }
@@ -14,9 +14,8 @@ namespace Yukon.TestData.UITests.CreateTask
         public string Visibility { get; set; }
         public string Skills { get; set; }
         public string Duration { get; set; }
-        public string EmploymentDropDown { get; set; }
 
-        public CreateTaskDataClass()
+        public TaskData()
         {
             Title = "Auto Tester Needed";
             Description = string.Concat("We’re working with Booboo, one of the leader on the travel market USA.\n",
@@ -25,8 +24,8 @@ namespace Yukon.TestData.UITests.CreateTask
                 "We are looking for a highly motivated Automation QA Engineer possessing with 2+ years of experience testing(API),\n",
                 "who can take ownership, drive communications, being proactive, manage project goals, contribute to product strategy and help define best practices.");
             Speciality
-                = (BasePage.Text.CreateTaskPage.SpecialitiesValues.Area.ITAndNetworking,
-                   BasePage.Text.CreateTaskPage.SpecialitiesValues.Speciality.NetworkEngineer,
+                = (BasePage.Text.CreateTaskPage.SpecialitiesValues.Area.WebMobileAndSoftwareDev,
+                   BasePage.Text.CreateTaskPage.SpecialitiesValues.Speciality.QAEngineer,
                    BasePage.Text.CreateTaskPage.SpecialitiesValues.Levels.Middle);
             Currency = BasePage.Text.CreateTaskPage.CurrencyValues.USDollar;
             Budget = "1500";

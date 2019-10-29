@@ -1,4 +1,4 @@
-﻿namespace Yukon.Models.Translation
+﻿namespace Yukon.Models.Translation.Headers.HeaderModals
 {
     public class MessageAccessModal
     {

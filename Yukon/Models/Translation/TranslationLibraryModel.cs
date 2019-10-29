@@ -1,7 +1,7 @@
 ﻿using Yukon.Models.Translation.Headers;
 using Yukon.Models.Translation.Headers.Dropdowns;
-using Yukon.Models.Translation.Modals.HeaderModals;
-using Yukon.Models.Translation.Tasks;
+using Yukon.Models.Translation.Headers.HeaderModals;
+using Yukon.Models.Translation.Manage.Tasks;
 
 namespace Yukon.Models.Translation
 {

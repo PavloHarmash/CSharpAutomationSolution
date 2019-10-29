@@ -54,10 +54,10 @@
 
     "SpecialitiesValues": {
       "Area": {
-        "ITAndNetworking": "Программист"
+        "WebMobileAndSoftwareDev": "Программист"
       },
       "Speciality": {
-        "NetworkEngineer": "Тестировщик"
+        "QAEngineer": "Тестировщик"
       },
       "Levels": {
         "Junior": "Junior",

@@ -1,15 +1,18 @@
 ﻿using NUnit.Framework;
-using Yukon.Enums;
 using Yukon.PageObjects.Headers;
 using Yukon.PageObjects.Headers.Dropdowns;
-using Yukon.PageObjects.Tasks;
+using Yukon.PageObjects.Manage.Tasks;
+using Yukon.TestData.UITests.CreateTask;
 
 namespace Yukon.TestCases.UITests.Regression
 {
     class CreateTaskEng : UIBaseTest
     {
-        public CreateTaskEng() : base(appLanguage: AppLanguage.English)
+        TaskData task;
+
+        public CreateTaskEng() : base()
         {
+            task = new TaskData();
         }
 
         [Test]
@@ -22,6 +25,9 @@ namespace Yukon.TestCases.UITests.Regression
 
             TasksPage taskPage = manageDropDown.ClickOnTasksMenuItem();
             CreateTaskPage createTask = taskPage.ClickOnCreateTaskFolder();
+            createTask.InputTitleTextField(task.Title);
+            createTask.InputDescriptionField(task.Description);
+            createTask.ClickOnSpecialitiesDropDown();
         }
     }
 }

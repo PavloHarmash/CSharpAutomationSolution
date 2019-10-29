@@ -2,9 +2,9 @@
 using OpenQA.Selenium;
 using Yukon.PageObjects.Headers;
 
-namespace Yukon.PageObjects.Modals.HeaderModals
+namespace Yukon.PageObjects.Headers.HeaderModals
 {
-    public class MessageAccessModal : BaseModal
+    public class MessageAccessModal : BaseHeaderModal
     {
         public MessageAccessModal(IWebDriver webDriwer) : base(webDriwer)
         {
@@ -12,13 +12,13 @@ namespace Yukon.PageObjects.Modals.HeaderModals
                             "Log In modal window wasn't downloaded");
         }
 
-        public void InputMessageLogPassword(string password) => base.InputPassword(password);
+        public void InputMessageLogPassword(string password) => InputPassword(password);
 
-        public void ClickOnRememberPassword() => base.ClickCheckBox();
+        public void ClickOnRememberPassword() => ClickCheckBox();
 
         public ApplicationHeader ClickOnAccessButton()
         {
-            base.ClickButton();
+            ClickButton();
             Wait.UntilPageLoaderDisappear();
             return ReturnPage<ApplicationHeader>();
         }

@@ -2,12 +2,13 @@
 using Yukon.Models.Configs;
 using Yukon.PageObjects.Headers;
 using Yukon.TestData.UITests;
+using Yukon.Enums;
 
 namespace Yukon.TestCases.UITests.Smoke
 {
     class LogInApplicationRus : UIBaseTest
     {
-        public LogInApplicationRus(): base()
+        public LogInApplicationRus() : base(appLanguage: AppLanguage.Russian)
         {
         }
 

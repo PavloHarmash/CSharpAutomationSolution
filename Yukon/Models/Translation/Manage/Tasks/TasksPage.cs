@@ -1,4 +1,4 @@
-﻿namespace Yukon.Models.Translation.Tasks
+﻿namespace Yukon.Models.Translation.Manage.Tasks
 {
     public class TasksPage
     {

@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using Yukon.Models.Configs;
-using Yukon.PageObjects.Modals.HeaderModals;
+using Yukon.PageObjects.Headers.HeaderModals;
 
 namespace Yukon.PageObjects.Headers
 {

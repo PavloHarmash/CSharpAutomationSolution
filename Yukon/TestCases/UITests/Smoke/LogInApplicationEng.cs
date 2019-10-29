@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using Yukon.Enums;
 using Yukon.Models.Configs;
 using Yukon.PageObjects.Headers;
 using Yukon.TestData.UITests;
@@ -8,7 +7,7 @@ namespace Yukon.TestCases.UITests.Smoke
 {
     public class LogInApplicationEng : UIBaseTest
     {
-        public LogInApplicationEng() : base(appLanguage: AppLanguage.English)
+        public LogInApplicationEng() : base()
         {
         }
                 

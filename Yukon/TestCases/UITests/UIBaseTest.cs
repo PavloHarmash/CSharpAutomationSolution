@@ -25,7 +25,7 @@ namespace Yukon.TestCases.UITests
         private string downloadPath = null;
 
         public UIBaseTest() : this(BrowserTypes.Chrome,
-                                   AppLanguage.Russian,
+                                   AppLanguage.English,
                                    false)
         {
         }
